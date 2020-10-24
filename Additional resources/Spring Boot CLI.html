@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Spring Boot CLI</title>
+<link rel="stylesheet" href="./Spring Boot CLI_files/spring.css">
+<link rel="stylesheet" href="./Spring Boot CLI_files/font-awesome.min.css">
+</head>
+<body id="cli" class="book toc2 toc-left" data-new-gr-c-s-check-loaded="14.980.0"><div><div id="header-spring">
+<h1>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 245.8 45.3" style="enable-background:new 0 0 245.8 45.3;" xml:space="preserve">
+<g id="logos">
+<g>
+<path class="st0" d="M39.4,3.7c-0.6,1.5-1.4,2.8-2.3,4c-3.9-4-9.3-6.4-15.2-6.4c-11.7,0-21.3,9.5-21.3,21.3
+c0,6.2,2.6,11.7,6.8,15.6l0.8,0.7c3.7,3.1,8.5,5,13.7,5c11.2,0,20.4-8.7,21.2-19.8C43.7,18.7,42.1,11.8,39.4,3.7z M10.5,38.3
+c-0.6,0.8-1.8,0.9-2.6,0.3C7.1,37.9,7,36.8,7.6,36c0.6-0.8,1.8-0.9,2.6-0.3C11,36.4,11.1,37.5,10.5,38.3z M39.3,31.9
+c-5.2,7-16.5,4.6-23.6,5c0,0-1.3,0.1-2.6,0.3c0,0,0.5-0.2,1.1-0.4c5-1.7,7.4-2.1,10.5-3.7c5.8-3,11.5-9.4,12.7-16.1
+c-2.2,6.4-8.9,12-14.9,14.2c-4.2,1.5-11.7,3-11.7,3c0,0-0.3-0.2-0.3-0.2c-5.1-2.5-5.3-13.6,4-17.1c4.1-1.6,8-0.7,12.4-1.8
+C31.6,14.1,37,10.6,39.2,6C41.7,13.3,44.7,24.8,39.3,31.9z"></path>
+<g>
+<path class="st0" d="M55.2,30.9c-0.5-0.3-0.9-0.9-0.9-1.6c0-1.1,0.8-1.9,1.9-1.9c0.4,0,0.7,0.1,1,0.3c2,1.3,4.1,2,5.9,2
+c2,0,3.2-0.9,3.2-2.2v-0.1c0-1.6-2.2-2.2-4.6-2.9c-3-0.9-6.5-2.1-6.5-6.1v-0.1c0-3.9,3.2-6.3,7.4-6.3c2.2,0,4.5,0.6,6.5,1.7
+c0.7,0.4,1.1,1,1.1,1.8c0,1.1-0.9,1.9-2,1.9c-0.4,0-0.6-0.1-0.9-0.2c-1.7-0.9-3.4-1.4-4.9-1.4c-1.8,0-2.9,0.9-2.9,2v0.1
+c0,1.5,2.2,2.2,4.7,2.9c3,0.9,6.4,2.3,6.4,6v0.1c0,4.3-3.4,6.5-7.7,6.5C60.4,33.3,57.6,32.5,55.2,30.9z"></path>
+<path class="st0" d="M72.5,14.3c0-1.3,1-2.4,2.3-2.4c1.3,0,2.4,1.1,2.4,2.4v1.4c1.5-2.2,3.7-3.9,7-3.9c4.8,0,9.6,3.8,9.6,10.7
+v0.1c0,6.8-4.7,10.7-9.6,10.7c-3.4,0-5.6-1.7-7-3.6V37c0,1.3-1.1,2.4-2.4,2.4c-1.3,0-2.3-1-2.3-2.4V14.3z M89.1,22.7L89.1,22.7
+c0-4.1-2.7-6.7-5.9-6.7c-3.2,0-6,2.7-6,6.6v0.1c0,4,2.8,6.6,6,6.6C86.4,29.3,89.1,26.7,89.1,22.7z"></path>
+<path class="st0" d="M95.7,14.3c0-1.3,1-2.4,2.3-2.4c1.3,0,2.4,1.1,2.4,2.4v1.1c0.2-1.8,3.1-3.5,5.2-3.5c1.5,0,2.3,1,2.3,2.3
+c0,1.3-0.8,2.1-1.9,2.3c-3.4,0.6-5.7,3.5-5.7,7.6V31c0,1.3-1.1,2.3-2.4,2.3c-1.3,0-2.3-1-2.3-2.3V14.3z"></path>
+<path class="st0" d="M109.7,14.3c0-1.3,1-2.4,2.3-2.4c1.3,0,2.4,1.1,2.4,2.4V31c0,1.3-1.1,2.3-2.4,2.3c-1.3,0-2.3-1-2.3-2.3V14.3
+z"></path>
+<path class="st0" d="M116.9,14.3c0-1.3,1-2.4,2.3-2.4c1.3,0,2.4,1.1,2.4,2.4v1c1.3-1.9,3.2-3.4,6.5-3.4c4.7,0,7.4,3.1,7.4,7.9V31
+c0,1.3-1,2.3-2.3,2.3c-1.3,0-2.4-1-2.4-2.3v-9.7c0-3.2-1.6-5-4.4-5c-2.7,0-4.7,1.9-4.7,5.1V31c0,1.3-1.1,2.3-2.4,2.3
+c-1.3,0-2.3-1-2.3-2.3V14.3z"></path>
+<path class="st0" d="M156.2,11.9c-1.3,0-2.4,1.1-2.4,2.4v1.4c-1.5-2.2-3.7-3.9-7-3.9c-4.9,0-9.6,3.8-9.6,10.7v0.1
+c0,6.8,4.7,10.7,9.6,10.7c3.4,0,5.6-1.7,7-3.6c-0.2,3.7-2.5,5.7-6.5,5.7c-2.4,0-4.5-0.6-6.3-1.6c-0.2-0.1-0.5-0.2-0.9-0.2
+c-1.1,0-2,0.9-2,2c0,0.9,0.5,1.6,1.3,1.9c2.5,1.2,5.1,1.8,8,1.8c3.7,0,6.6-0.9,8.5-2.8c1.7-1.7,2.7-4.3,2.7-7.8V14.3
+C158.5,13,157.5,11.9,156.2,11.9z M147.9,29.2c-3.2,0-5.9-2.5-5.9-6.6v-0.1c0-4,2.7-6.6,5.9-6.6c3.2,0,6,2.7,6,6.6v0.1
+C153.9,26.6,151.1,29.2,147.9,29.2z"></path>
+<path class="st0" d="M114.5,6.3c0,1.3-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4
+C113.4,3.9,114.5,4.9,114.5,6.3z"></path>
+</g>
+</g>
+</g>
+</svg>
+
+</h1>
+</div></div>
+<div id="header">
+<h1>Spring Boot CLI</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<div class="back-action"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/index.html"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span> Back to index</a></div><ul class="mobile-toc">
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-installation">1. Installing the CLI</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-using-the-cli">2. Using the CLI</a>
+<ul class="sectlevel2">
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-run">2.1. Running Applications with the CLI</a>
+<ul class="sectlevel3">
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-deduced-grab-annotations">2.1.1. Deduced “grab” Dependencies</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates">2.1.2. Deduced “grab” Coordinates</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-import-statements">2.1.3. Default Import Statements</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-automatic-main-method">2.1.4. Automatic Main Method</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates-custom-dependency-management">2.1.5. Custom Dependency Management</a></li>
+</ul>
+</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-multiple-source-files">2.2. Applications with Multiple Source Files</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-jar">2.3. Packaging Your Application</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-init">2.4. Initialize a New Project</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-shell">2.5. Using the Embedded Shell</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-install-uninstall">2.6. Adding Extensions to the CLI</a></li>
+</ul>
+</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-groovy-beans-dsl">3. Developing Applications with the Groovy Beans DSL</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-maven-settings">4. Configuring the CLI with settings.xml</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-whats-next">5. What to Read Next</a></li>
+</ul>
+<div id="tocbot" class="js-toc desktop-toc"><ol class="toc-list "><li class="toc-list-item is-active-li"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-installation" class="toc-link node-name--H2  is-active-link">1. Installing the CLI</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-using-the-cli" class="toc-link node-name--H2 ">2. Using the CLI</a><ol class="toc-list  is-collapsible is-collapsed"><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-run" class="toc-link node-name--H3 ">2.1. Running Applications with the CLI</a><ol class="toc-list  is-collapsible is-collapsed"><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-deduced-grab-annotations" class="toc-link node-name--H4 ">2.1.1. Deduced “grab” Dependencies</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates" class="toc-link node-name--H4 ">2.1.2. Deduced “grab” Coordinates</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-import-statements" class="toc-link node-name--H4 ">2.1.3. Default Import Statements</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-automatic-main-method" class="toc-link node-name--H4 ">2.1.4. Automatic Main Method</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates-custom-dependency-management" class="toc-link node-name--H4 ">2.1.5. Custom Dependency Management</a></li></ol></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-multiple-source-files" class="toc-link node-name--H3 ">2.2. Applications with Multiple Source Files</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-jar" class="toc-link node-name--H3 ">2.3. Packaging Your Application</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-init" class="toc-link node-name--H3 ">2.4. Initialize a New Project</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-shell" class="toc-link node-name--H3 ">2.5. Using the Embedded Shell</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-install-uninstall" class="toc-link node-name--H3 ">2.6. Adding Extensions to the CLI</a></li></ol></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-groovy-beans-dsl" class="toc-link node-name--H2 ">3. Developing Applications with the Groovy Beans DSL</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-maven-settings" class="toc-link node-name--H2 ">4. Configuring the CLI with settings.xml</a></li><li class="toc-list-item"><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-whats-next" class="toc-link node-name--H2 ">5. What to Read Next</a></li></ol></div></div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Spring Boot CLI is a command line tool that you can use if you want to quickly develop a Spring application.
+It lets you run Groovy scripts, which means that you have a familiar Java-like syntax without so much boilerplate code.
+You can also bootstrap a new project or write your own command for it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-installation"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-installation"></a>1. Installing the CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Spring Boot CLI (Command-Line Interface) can be installed manually by using SDKMAN! (the SDK Manager) or by using Homebrew or MacPorts if you are an OSX user.
+See <em><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started-installing-the-cli">getting-started.html</a></em> in the “Getting started” section for comprehensive installation instructions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-using-the-cli"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-using-the-cli"></a>2. Using the CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have installed the CLI, you can run it by typing <code>spring</code> and pressing Enter at the command line.
+If you run <code>spring</code> without any arguments, a help screen is displayed, as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring
+usage: spring [--help] [--version]
+       &lt;command&gt; [&lt;args&gt;]
+
+Available commands are:
+
+  run [options] &lt;files&gt; [--] [args]
+    Run a spring groovy script
+
+  <em>... more command help is shown here</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can type <code>spring help</code> to get more details about any of the supported commands, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring help run
+spring run - Run a spring groovy script
+
+usage: spring run [options] &lt;files&gt; [--] [args]
+
+Option                     Description
+------                     -----------
+--autoconfigure [Boolean]  Add autoconfigure compiler
+                             transformations (default: true)
+--classpath, -cp           Additional classpath entries
+--no-guess-dependencies    Do not attempt to guess dependencies
+--no-guess-imports         Do not attempt to guess imports
+-q, --quiet                Quiet logging
+-v, --verbose              Verbose logging of dependency
+                             resolution
+--watch                    Watch the specified file for changes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>version</code> command provides a quick way to check which version of Spring Boot you are using, as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring version
+Spring CLI v2.3.4.RELEASE</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-run"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-run"></a>2.1. Running Applications with the CLI</h3>
+<div class="paragraph">
+<p>You can compile and run Groovy source code by using the <code>run</code> command.
+The Spring Boot CLI is completely self-contained, so you do not need any external Groovy installation.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows a “hello world” web application written in Groovy:</p>
+</div>
+<div class="listingblock">
+<div class="title">hello.groovy</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="groovy" class="language-groovy hljs"><span class="hljs-meta">@RestController</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebApplication</span> {</span>
+
+    <span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">"/"</span>)
+    String home() {
+        <span class="hljs-string">"Hello World!"</span>
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To compile and run the application, type the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring run hello.groovy</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To pass command-line arguments to the application, use <code>--</code> to separate the commands from the “spring” command arguments, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring run hello.groovy -- --server.port=9000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To set JVM command line arguments, you can use the <code>JAVA_OPTS</code> environment variable, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ JAVA_OPTS=-Xmx1024m spring run hello.groovy</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When setting <code>JAVA_OPTS</code> on Microsoft Windows, make sure to quote the entire instruction, such as <code>set "JAVA_OPTS=-Xms256m -Xmx2048m"</code>.
+Doing so ensures the values are properly passed to the process.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="cli-deduced-grab-annotations"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-deduced-grab-annotations"></a>2.1.1. Deduced “grab” Dependencies</h4>
+<div class="paragraph">
+<p>Standard Groovy includes a <code>@Grab</code> annotation, which lets you declare dependencies on third-party libraries.
+This useful technique lets Groovy download jars in the same way as Maven or Gradle would but without requiring you to use a build tool.</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot extends this technique further and tries to deduce which libraries to “grab” based on your code.
+For example, since the <code>WebApplication</code> code shown previously uses <code>@RestController</code> annotations, Spring Boot grabs "Tomcat" and "Spring MVC".</p>
+</div>
+<div class="paragraph">
+<p>The following items are used as “grab hints”:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Items</th>
+<th class="tableblock halign-left valign-top">Grabs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>JdbcTemplate</code>, <code>NamedParameterJdbcTemplate</code>, <code>DataSource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JDBC Application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableJms</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JMS Application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableCaching</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Caching abstraction.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JUnit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableRabbit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RabbitMQ.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extends <code>Specification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spock test.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableBatchProcessing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Batch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@MessageEndpoint</code> <code>@EnableIntegration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Integration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Controller</code> <code>@RestController</code> <code>@EnableWebMvc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring MVC + Embedded Tomcat.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableWebSecurity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Security.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EnableTransactionManagement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Transaction Management.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See subclasses of <a href="https://github.com/spring-projects/spring-boot/tree/v2.3.4.RELEASE/spring-boot-project/spring-boot-cli/src/main/java/org/springframework/boot/cli/compiler/CompilerAutoConfiguration.java"><code>CompilerAutoConfiguration</code></a> in the Spring Boot CLI source code to understand exactly how customizations are applied.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cli-default-grab-deduced-coordinates"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates"></a>2.1.2. Deduced “grab” Coordinates</h4>
+<div class="paragraph">
+<p>Spring Boot extends Groovy’s standard <code>@Grab</code> support by letting you specify a dependency without a group or version (for example, <code>@Grab('freemarker')</code>).
+Doing so consults Spring Boot’s default dependency metadata to deduce the artifact’s group and version.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The default metadata is tied to the version of the CLI that you use.
+It changes only when you move to a new version of the CLI, putting you in control of when the versions of your dependencies may change.
+A table showing the dependencies and their versions that are included in the default metadata can be found in the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html#dependency-versions">appendix</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cli-default-import-statements"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-import-statements"></a>2.1.3. Default Import Statements</h4>
+<div class="paragraph">
+<p>To help reduce the size of your Groovy code, several <code>import</code> statements are automatically included.
+Notice how the preceding example refers to <code>@Component</code>, <code>@RestController</code>, and <code>@RequestMapping</code> without needing to use fully-qualified names or <code>import</code> statements.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Many Spring annotations work without using <code>import</code> statements.
+Try running your application to see what fails before adding imports.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cli-automatic-main-method"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-automatic-main-method"></a>2.1.4. Automatic Main Method</h4>
+<div class="paragraph">
+<p>Unlike the equivalent Java application, you do not need to include a <code>public static void main(String[] args)</code> method with your <code>Groovy</code> scripts.
+A <code>SpringApplication</code> is automatically created, with your compiled code acting as the <code>source</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cli-default-grab-deduced-coordinates-custom-dependency-management"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-default-grab-deduced-coordinates-custom-dependency-management"></a>2.1.5. Custom Dependency Management</h4>
+<div class="paragraph">
+<p>By default, the CLI uses the dependency management declared in <code>spring-boot-dependencies</code> when resolving <code>@Grab</code> dependencies.
+Additional dependency management, which overrides the default dependency management, can be configured by using the <code>@DependencyManagementBom</code> annotation.
+The annotation’s value should specify the coordinates (<code>groupId:artifactId:version</code>) of one or more Maven BOMs.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider the following declaration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="groovy" class="language-groovy hljs"><span class="hljs-meta">@DependencyManagementBom</span>(<span class="hljs-string">"com.example.custom-bom:1.0.0"</span>)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The preceding declaration picks up <code>custom-bom-1.0.0.pom</code> in a Maven repository under <code>com/example/custom-versions/1.0.0/</code>.</p>
+</div>
+<div class="paragraph">
+<p>When you specify multiple BOMs, they are applied in the order in which you declare them, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs"><span class="hljs-meta">@DependencyManagementBom</span>([<span class="hljs-string">"com.example.custom-bom:1.0.0"</span>,
+        <span class="hljs-string">"com.example.another-bom:1.0.0"</span>])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The preceding example indicates that the dependency management in <code>another-bom</code> overrides the dependency management in <code>custom-bom</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can use <code>@DependencyManagementBom</code> anywhere that you can use <code>@Grab</code>.
+However, to ensure consistent ordering of the dependency management, you can use <code>@DependencyManagementBom</code> at most once in your application.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-multiple-source-files"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-multiple-source-files"></a>2.2. Applications with Multiple Source Files</h3>
+<div class="paragraph">
+<p>You can use “shell globbing” with all commands that accept file input.
+Doing so lets you use multiple files from a single directory, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring run *.groovy</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-jar"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-jar"></a>2.3. Packaging Your Application</h3>
+<div class="paragraph">
+<p>You can use the <code>jar</code> command to package your application into a self-contained executable jar file, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring jar my-app.jar *.groovy</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting jar contains the classes produced by compiling the application and all of the application’s dependencies so that it can then be run by using <code>java -jar</code>.
+The jar file also contains entries from the application’s classpath.
+You can add and remove explicit paths to the jar by using <code>--include</code> and <code>--exclude</code>.
+Both are comma-separated, and both accept prefixes, in the form of “+” and “-”, to signify that they should be removed from the defaults.
+The default includes are as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public/**, resources/**, static/**, templates/**, META-INF/**, *</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default excludes are as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.*, repository/**, build/**, target/**, **/*.jar, **/*.groovy</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type <code>spring help jar</code> on the command line for more information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-init"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-init"></a>2.4. Initialize a New Project</h3>
+<div class="paragraph">
+<p>The <code>init</code> command lets you create a new project by using <a href="https://start.spring.io/" class="bare">start.spring.io</a> without leaving the shell, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring init --dependencies=web,data-jpa my-project
+Using service at https://start.spring.io
+Project extracted to '/Users/developer/example/my-project'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The preceding example creates a <code>my-project</code> directory with a Maven-based project that uses <code>spring-boot-starter-web</code> and <code>spring-boot-starter-data-jpa</code>.
+You can list the capabilities of the service by using the <code>--list</code> flag, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring init --list
+=======================================
+Capabilities of https://start.spring.io
+=======================================
+
+Available dependencies:
+-----------------------
+actuator - Actuator: Production ready features to help you monitor and manage your application
+...
+web - Web: Support for full-stack web development, including Tomcat and spring-webmvc
+websocket - Websocket: Support for WebSocket development
+ws - WS: Support for Spring Web Services
+
+Available project types:
+------------------------
+gradle-build -  Gradle Config [format:build, build:gradle]
+gradle-project -  Gradle Project [format:project, build:gradle]
+maven-build -  Maven POM [format:build, build:maven]
+maven-project -  Maven Project [format:project, build:maven] (default)
+
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>init</code> command supports many options.
+See the <code>help</code> output for more details.
+For instance, the following command creates a Gradle project that uses Java 8 and <code>war</code> packaging:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring init --build=gradle --java-version=1.8 --dependencies=websocket --packaging=war sample-app.zip
+Using service at https://start.spring.io
+Content saved to 'sample-app.zip'</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-shell"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-shell"></a>2.5. Using the Embedded Shell</h3>
+<div class="paragraph">
+<p>Spring Boot includes command-line completion scripts for the BASH and zsh shells.
+If you do not use either of these shells (perhaps you are a Windows user), you can use the <code>shell</code> command to launch an integrated shell, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring shell
+<strong>Spring Boot</strong> (v2.3.4.RELEASE)
+Hit TAB to complete. Type \'help' and hit RETURN for help, and \'exit' to quit.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From inside the embedded shell, you can run other commands directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ version
+Spring CLI v2.3.4.RELEASE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The embedded shell supports ANSI color output as well as <code>tab</code> completion.
+If you need to run a native command, you can use the <code>!</code> prefix.
+To exit the embedded shell, press <code>ctrl-c</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-install-uninstall"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-install-uninstall"></a>2.6. Adding Extensions to the CLI</h3>
+<div class="paragraph">
+<p>You can add extensions to the CLI by using the <code>install</code> command.
+The command takes one or more sets of artifact coordinates in the format <code>group:artifact:version</code>, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring install com.example:spring-boot-cli-extension:1.0.0.RELEASE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to installing the artifacts identified by the coordinates you supply, all of the artifacts' dependencies are also installed.</p>
+</div>
+<div class="paragraph">
+<p>To uninstall a dependency, use the <code>uninstall</code> command.
+As with the <code>install</code> command, it takes one or more sets of artifact coordinates in the format of <code>group:artifact:version</code>, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring uninstall com.example:spring-boot-cli-extension:1.0.0.RELEASE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It uninstalls the artifacts identified by the coordinates you supply and their dependencies.</p>
+</div>
+<div class="paragraph">
+<p>To uninstall all additional dependencies, you can use the <code>--all</code> option, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring uninstall --all</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-groovy-beans-dsl"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-groovy-beans-dsl"></a>3. Developing Applications with the Groovy Beans DSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Framework 4.0 has native support for a <code>beans{}</code> “DSL” (borrowed from <a href="https://grails.org/">Grails</a>), and you can embed bean definitions in your Groovy application scripts by using the same format.
+This is sometimes a good way to include external features like middleware declarations, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="groovy" class="language-groovy hljs"><span class="hljs-meta">@Configuration</span>(proxyBeanMethods = <span class="hljs-literal">false</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CommandLineRunner</span> {</span>
+
+    <span class="hljs-meta">@Autowired</span>
+    SharedService service
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">void</span> run(String... args) {
+        println service.message
+    }
+
+}
+
+<span class="hljs-keyword">import</span> my.company.SharedService
+
+beans {
+    service(SharedService) {
+        message = <span class="hljs-string">"Hello World"</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can mix class declarations with <code>beans{}</code> in the same file as long as they stay at the top level, or, if you prefer, you can put the beans DSL in a separate file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-maven-settings"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-maven-settings"></a>4. Configuring the CLI with settings.xml</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Spring Boot CLI uses Aether, Maven’s dependency resolution engine, to resolve dependencies.
+The CLI makes use of the Maven configuration found in <code>~/.m2/settings.xml</code> to configure Aether.
+The following configuration settings are honored by the CLI:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Offline</p>
+</li>
+<li>
+<p>Mirrors</p>
+</li>
+<li>
+<p>Servers</p>
+</li>
+<li>
+<p>Proxies</p>
+</li>
+<li>
+<p>Profiles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Activation</p>
+</li>
+<li>
+<p>Repositories</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Active profiles</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://maven.apache.org/settings.html">Maven’s settings documentation</a> for further information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-whats-next"><a class="anchor" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html#cli-whats-next"></a>5. What to Read Next</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are some <a href="https://github.com/spring-projects/spring-boot/tree/v2.3.4.RELEASE/spring-boot-project/spring-boot-cli/samples">sample groovy scripts</a> available from the GitHub repository that you can use to try out the Spring Boot CLI.
+There is also extensive Javadoc throughout the <a href="https://github.com/spring-projects/spring-boot/tree/v2.3.4.RELEASE/spring-boot-project/spring-boot-cli/src/main/java/org/springframework/boot/cli">source code</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you find that you reach the limit of the CLI tool, you probably want to look at converting your application to a full Gradle or Maven built “Groovy project”.
+The next section covers Spring Boot’s "<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins.html#build-tool-plugins">Build tool plugins</a>", which you can use with Gradle or Maven.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-09-17 12:58:07 UTC
+</div>
+</div>
+<link rel="stylesheet" href="./Spring Boot CLI_files/github.min.css">
+<script async="" src="./Spring Boot CLI_files/analytics.js.download"></script><script src="./Spring Boot CLI_files/highlight.min.js.download"></script>
+<script>hljs.initHighlighting()</script>
+<script type="text/javascript" src="./Spring Boot CLI_files/tocbot.min.js.download"></script>
+<script type="text/javascript" src="./Spring Boot CLI_files/toc.js.download"></script>
+<script>if(window.parent==window){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-2728886-23','auto',{'siteSpeedSampleRate':100});ga('send','pageview');}</script>
+</body><link id="lite-css-list" rel="stylesheet" type="text/css" href="chrome-extension://kihnnjkmbhhockopicpjhalcbchpmkkh/data/content_script/inject_b.css"><style id="custom-css-list" type="text/css"></style></html>
